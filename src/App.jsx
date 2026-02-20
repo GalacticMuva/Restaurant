@@ -3,6 +3,8 @@ import './App.css';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import OrderPage from './components/OrderPage';
+import ChatBot from './components/ChatBot'; 
+
 
 function App() {
   return (
@@ -13,10 +15,10 @@ function App() {
         </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/menu" element={<Menu />} />
         <Route path="/order" element={<OrderPage />} />
       </Routes>
+      <ChatBot />
     </Router>
   );
 }
