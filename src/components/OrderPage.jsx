@@ -6,7 +6,7 @@ import './OrderPage.css';
 const OrderPage = () => {
   const location = useLocation();
   const [customerName, setCustomerName] = useState('');
-  const [orderText, setOrderText] = useState(''); // React state name
+  const [orderText, setOrderText] = useState(''); 
   const [message, setMessage] = useState('');
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const OrderPage = () => {
       .insert([
         {
           customer_name: customerName,
-          order_details: orderText // Maps React state to your specific DB column
+          order_details: orderText 
         }
       ]);
 
