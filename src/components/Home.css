@@ -15,14 +15,26 @@
 }
 
 .hero-overlay h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-family: 'Georgia', serif;
+    font-size: 4.5rem;
+    color: #ffcc00;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-overlay p {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .cta-button {
     display: inline-block;
     background-color: #ffcc00;
-    /* Filipino Sun Yellow */
     color: #333;
     padding: 15px 30px;
     text-decoration: none;

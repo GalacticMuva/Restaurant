@@ -1,13 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 
 const Nav = () => {
   return (
     <nav className="navbar">
-      <h2>Lola's</h2>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/menu">Menu</Link></li>
-
+      <div className="nav-logo">
+        <h2>Lola's Filipino Kitchen</h2>
+      </div>
+      <ul className="nav-links">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/menu">Menu</Link>
+        </li>
       </ul>
     </nav>
   );

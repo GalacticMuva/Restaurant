@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
+import { useNavigate } from 'react-router-dom'; 
 import './Menu.css';
 
 const Menu = () => {
-  const [menuItems, setMenuItems] = useState([]);
+  const navigate = useNavigate();
 
+  const handleOrderClick = (itemName) => {
+    navigate('/order', { state: { item: itemName } });
+  };
+  const [menuItems, setMenuItems] = useState([]);
   useEffect(() => {
     const fetchMenu = async () => {
       const { data, error } = await supabase
@@ -39,6 +44,7 @@ return (
             <img src={item.image_url} alt={item.name} />
             <h3>{item.name}</h3>
             <p>${item.price}</p>
+            <button onClick={() => handleOrderClick(item.name)}>Order Now</button>
           </div>
         ))}
       </div>
@@ -53,6 +59,7 @@ return (
             <img src={item.image_url} alt={item.name} />
             <h3>{item.name}</h3>
             <p>${item.price}</p>
+            <button onClick={() => handleOrderClick(item.name)}>Order Now</button>
           </div>
         ))}
       </div>
@@ -67,6 +74,7 @@ return (
             <img src={item.image_url} alt={item.name} />
             <h3>{item.name}</h3>
             <p>${item.price}</p>
+            <button onClick={() => handleOrderClick(item.name)}>Order Now</button>
           </div>
         ))}
       </div>
@@ -81,6 +89,7 @@ return (
             <img src={item.image_url} alt={item.name} />
             <h3>{item.name}</h3>
             <p>${item.price}</p>
+            <button onClick={() => handleOrderClick(item.name)}>Order Now</button>
           </div>
         ))}
       </div>
