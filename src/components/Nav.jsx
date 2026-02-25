@@ -1,21 +1,27 @@
-import { Link } from 'react-router-dom'; 
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Nav = () => {
+export const Nav = () => {
   return (
-    <nav className="navbar">
-      <div className="nav-logo">
-        <h2>Lola's Filipino Kitchen</h2>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <div className="container-fluid">
+        <Link className="navbar-brand fw-bold" to="/">
+          Lola's Filipino Kitchen
+        </Link>
+        
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/menu">Menu</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul className="nav-links">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/menu">Menu</Link>
-        </li>
-      </ul>
     </nav>
-  );
+  )
 };
 
 export default Nav;
