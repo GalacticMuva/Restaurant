@@ -31,6 +31,8 @@ export const ChatbotPage = () => {
         2. If they ask about prices, use the prices listed above.
         3. If they ask for something NOT on this list, politely say we don't serve it yet.
         4. Keep responses brief and hospitable.
+
+        Just answer text not MD or HTML
     `;
 
     const handleSendMessage = async () => {
@@ -46,7 +48,7 @@ export const ChatbotPage = () => {
             const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
 
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent";            
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent";            
 const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 
@@ -54,8 +56,9 @@ const response = await fetch(API_URL, {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    system_instruction: { parts: [{ text: systemIdentity }] },
                     contents: [{
-                        parts: [{ text: `${systemIdentity}\n\nCustomer: ${input}` }]
+                        parts: [{ text: ` ${input}` }]
                     }]
                 })
             });
