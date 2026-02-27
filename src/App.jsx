@@ -4,6 +4,8 @@ import Nav from './components/Nav';
 import {Home} from './pages/Home';
 import {MenuPage} from './pages/MenuPage';
 import { OrderPage } from './pages/OrderPage' 
+import { ChatbotPage } from './pages/ChatbotPage';
+
 
 
 function App() {
@@ -15,7 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<MenuPage />} />
-          <Route path="/order" element={<OrderPage />} /> 
+          <Route path="/order" element={<OrderPage />} />
+          <Route path="/chat" element={<ChatbotPage />} /> 
         </Routes>
       </main>
     </HashRouter>
